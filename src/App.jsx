@@ -3,7 +3,6 @@ import './App.css'
 import ReservationForm from './components/ReservationForm'
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
     <>

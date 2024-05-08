@@ -25,19 +25,19 @@ const HotelList = () => {
                     <Card>
                         <CardContent>
                             <Typography variant="h5" component="div">
-                                {hotel.nombre}
+                                {hotel.name}
                             </Typography>
                             <Typography color="text.secondary">
-                                Ubicación: {hotel.ubicacion}
+                                Ubicación: {hotel.location}
                             </Typography>
                             <Typography color="text.secondary">
-                                Capacidad Máxima: {hotel.capacidadMaximaPorHabitacion} personas por habitación
+                                Capacidad Máxima: {hotel.maxinumCapacityRoom} personas por habitación
                             </Typography>
                             <Typography color="text.secondary">
                                 Habitaciones:
-                                {hotel.habitaciones.map((habitacion) => (
-                                    <div key={habitacion.tipo}>
-                                        {habitacion.cantidad} {habitacion.tipo}
+                                {hotel.bedrooms.map((habitacion) => (
+                                    <div key={habitacion.id}>
+                                        {habitacion.amount} {habitacion.type}
                                     </div>
                                 ))}
                             </Typography>

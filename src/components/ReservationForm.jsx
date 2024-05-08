@@ -4,13 +4,13 @@ import axios from 'axios';
 
 const ReservationForm = () => {
     const [datosReserva, setDatosReserva] = useState({
-        hotelId: '',
-        habitacionId: '',
-        fechaInicio: '',
-        fechaFin: '',
-        numeroPersonas: '',
-        tipoAlojamiento: '',
-        temporadaId: ''
+        hotel: '',
+        room: '',
+        startDate: '',
+        endDate: '',
+        numberOfPeople: '',
+        accommodationType: '',
+        season: ''
     });
 
     const handleChange = (e) => {
@@ -34,60 +34,60 @@ const ReservationForm = () => {
             <form onSubmit={handleSubmit}>
         
                 <TextField
-                    name="hotelId"
-                    label="Hotel ID"
-                    value={datosReserva.hotelId}
+                    name="hotel"
+                    label="Hotel"
+                    value={datosReserva.hotel.id}
                     onChange={handleChange}
                     fullWidth    
                 />
                 <TextField
-                    name="habitacionId"
-                    label="Habitación ID"
-                    value={datosReserva.habitacionId}
+                    name="room"
+                    label="Habitación"
+                    value={datosReserva.room.id}
                     onChange={handleChange}
                     fullWidth
                     marginTop={2}
                 />
                 <TextField
-                    name="fechaInicio"
+                    name="startDate"
                     label="Fecha de Inicio"
                     type="date"
-                    value={datosReserva.fechaInicio}
+                    value={datosReserva.startDate}
                     onChange={handleChange}
                     fullWidth
                 />
                 <TextField
-                    name="fechaFin"
+                    name="endDate"
                     label="Fecha de Fin"
                     type="date"
-                    value={datosReserva.fechaFin}
+                    value={datosReserva.endDate}
                     onChange={handleChange}
                     fullWidth
                 />
                 <TextField
-                    name="numeroPersonas"
+                    name="numberOfPeople"
                     label="Número de Personas"
                     type="number"
-                    value={datosReserva.numeroPersonas}
+                    value={datosReserva.numberOfPeople}
                     onChange={handleChange}
                     fullWidth
                 />
                 <FormControl fullWidth>
                     <InputLabel>Tipo de Alojamiento</InputLabel>
                     <Select
-                        name="tipoAlojamiento"
-                        value={datosReserva.tipoAlojamiento}
+                        name="accommodationType"
+                        value={datosReserva.accommodationType}
                         onChange={handleChange}
                     >
-                        <MenuItem value="estándar">Estándar</MenuItem>
+                        <MenuItem value="standard">Estándar</MenuItem>
                         <MenuItem value="premium">Premium</MenuItem>
                         <MenuItem value="VIP">VIP</MenuItem>
                     </Select>
                 </FormControl>
                 <TextField
-                    name="temporadaId"
-                    label="Temporada ID"
-                    value={datosReserva.temporadaId}
+                    name="season"
+                    label="Temporada"
+                    value={datosReserva.season.Id}
                     onChange={handleChange}
                     fullWidth
                 />
