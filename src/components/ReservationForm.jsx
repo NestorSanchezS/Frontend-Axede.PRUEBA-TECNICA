@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Container, TextField, Button, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 import axios from 'axios';
 
-const ReservaForm = () => {
+const ReservationForm = () => {
     const [datosReserva, setDatosReserva] = useState({
         hotelId: '',
         habitacionId: '',
@@ -19,9 +19,10 @@ const ReservaForm = () => {
     };
 
     const handleSubmit = async (e) => {
+        console.log(e)
         e.preventDefault();
         try {
-            const response = await axios.post('/api/realizar-reserva', datosReserva);
+            const response = await axios.post('http://localhost:3000/reservation/createReservation', datosReserva);
             console.log(response.data.message);
         } catch (error) {
             console.error(error);
@@ -31,12 +32,13 @@ const ReservaForm = () => {
     return (
         <Container>
             <form onSubmit={handleSubmit}>
+        
                 <TextField
                     name="hotelId"
                     label="Hotel ID"
                     value={datosReserva.hotelId}
                     onChange={handleChange}
-                    fullWidth
+                    fullWidth    
                 />
                 <TextField
                     name="habitacionId"
@@ -44,6 +46,7 @@ const ReservaForm = () => {
                     value={datosReserva.habitacionId}
                     onChange={handleChange}
                     fullWidth
+                    marginTop={2}
                 />
                 <TextField
                     name="fechaInicio"
@@ -94,4 +97,4 @@ const ReservaForm = () => {
     );
 };
 
-export default ReservaForm;
+export default ReservationForm;
